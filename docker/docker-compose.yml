@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+
+  blazor:
+    container_name: 'export_pdf'
+    image: export_pdf:1
+    ports:
+      - 5600:5000
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5000

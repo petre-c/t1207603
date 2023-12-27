@@ -16,7 +16,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["DXApplication2.Blazor.Server/DXApplication2.Blazor.Server.csproj", "DXApplication2.Blazor.Server/"]
+COPY ["DXApplication2.Blazor.Server/mydatabase.xml", "DXApplication2.Blazor.Server/"]
 COPY ["DXApplication2.Module/DXApplication2.Module.csproj", "DXApplication2.Module/"]
+COPY ["nuget.config", "nuget.config"]
 RUN dotnet restore "./DXApplication2.Blazor.Server/./DXApplication2.Blazor.Server.csproj"
 COPY . .
 WORKDIR "/src/DXApplication2.Blazor.Server"
